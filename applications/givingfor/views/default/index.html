@@ -1,34 +1,211 @@
 {{extend 'layout.html'}}
+<style>
+	#header-index-container{
+		background-color:rgb(247,247,247);
+		border-bottom:1px solid rgb(225,225,225);
+	}
+	#header-index{
+		margin-left:6%;
+		margin-right:6%;
+	}
+	#project-list-container{text-align:center;width:100%;}
+	#project-list-item{border:2px solid rgb(180,180,180);display:inline-block;padding:10px;margin:7px;}
+    #project-list-item:hover{border:2px solid rgb(110,110,110);display:inline-block;padding:11px;margin:7px;}
+	#share-footer{
+    	background-color:rgb(247,247,247);
+    	border-top:1px solid rgb(225, 225, 225);
+	}
+	#share-footer-container{margin-left:5%;margin-right:5%;}
+</style>
+<script language="javascript" type="text/javascript" src="{{=URL(request.application,'static','js/jquery.flot.js')}}"></script>
+<script language="javascript" type="text/javascript" src="{{=URL(request.application,'static','js/jquery.flot.selection.js')}}"></script>
+<script language="javascript" type="text/javascript" src="{{=URL(request.application,'static','js/jquery.flot.time.js')}}"></script>
+<script language="javascript" type="text/javascript" src="{{=URL(request.application,'static','js/jquery.thumbnailScroller.js')}}"></script>
+
+<div id="header-index-container">
+	<div id="header-index">
+		<p class="lead">givingfor is a transparent, crowd owned, nonprofit, crowdgiving platform</p>
+		<p class="lead">centered on the idea that we always are improving</p>
+		<p class="lead">sign up <a href="">here</a></p>
+	</div>
+</div>
+<div class="centered-width">
+	<br>
+	<p class="lead" style="text-align:center;">giving is recieving</p>
+	<p class="lead" style="text-align:center;">giving time, currency, items, good will, encouragement, content, professional appointments, consulting</p>
+	<p class="lead" style="text-align:center;">volunteering nearby, from home</p>
+	<p class="lead" style="text-align:center;">helping with food, shelter, insurance discounts, cooperate partners</p>
+	<p class="lead" style="text-align:center;">vote on what the value should be spent on</p>
+	<p class="lead" style="text-align:center;"><a href="http://www.voetr.com/committee/givingfor">voetr connected</a></p>
+	<p class="lead" style="text-align:center;"><a href="http://www.conex.us/project/givingfor">conex.us connected</a></p>
+	<p class="lead" style="text-align:center;">life is a necessity and a right, it's time to start seeing ourselves as a part of one larger organism. we can do this!</p>
+	<p class="lead" style="text-align:center;">givingfor's mission is to promote the right to life, to foster growth, and to spark change. giving is recieving.</p>
+	<p class="lead" style="text-align:center;">crowd giving platform</p>
+
+	<br>
+	<br>
+
+	<!--<p style="text-align:center;" class="lead"><a href="/projects/">projects</a></p><hr>-->
+</div>
+
 <br><br>
-<h1>givingfor</h1><hr>
-<br>
-
-<p class="lead">help those in need</p>
-<p class="lead">crowd owned and transparent</p>
-<p class="lead">the government isn't going to do it, so we are</p>
-<p class="lead">if you think youre eleigble for benifits, sign up <a href="">here</a></p>
-<p class="lead">giving is recieving</p>
-<p class="lead">helping with food, shelter, insurance discounts, cooperate partners</p>
-<p class="lead">hospitalityfor, insuringfor, deliveryfor, investingfor, bankingfor, conex.us. epoint.me</p>
-<p class="lead">vote on what the value should be spent on</p>
-<p class="lead"><a href="www.voetr.com/committee/givingfor">voetr committee</a></p>
-<br><br>
-<p class="lead">giving time, currency, items, good will, encouragement, content, professional appointments, consulting</p>
-<h5>$10200120210 to spend</h5> how?</p>
-
-<br>
-<p class="lead">add a new givingfor project</p>
-<p class="lead">vote on project</p>
-
-<br><br>
-<p class="lead">browse givingfor resources</p>
-<p class="lead">volunteering nearby, from home</p>
-
-<br><br>
-
-<p class="lead">life is a necisity and a right, we have advanced to the point where we should not be dying of hunger. we have healthcare technology, we have the ability to change, it's time to start seeing ourselves as a part of one larger organism. we can do this!</p>
-<p class="lead">givingfor's mission is to promote the right to life. to foster growth, and to spark change. giving is recieving.</p>
-
+<div style="background-color:rgb(123,174,123);">
+    <br><br><br>
+    <p style="text-align:center;color:rgb(200,200,200)"><a href="/projects/" style="color:rgb(240,250,240)">projects</a></p> 
+    <br><br><br>
+</div>
 <br><br><br>
-<a class="btn">give here</a>
-<br><br>
+
+<div class="centered-width">
+
+	<div id="project-list-container">
+		{{for project in project_list:}}
+		<div id="project-list-item">
+			<a href="/project/{{=project['url_title']}}"><p style="text-align:center;">{{=project['title']}}</p></a>
+			<a href="/project/{{=project['url_title']}}"><img style="width:256px;" class="img-polaroid" src="/givingfor/static/images/noimage-icon.png"/></a>
+		</div>
+		{{pass}}
+		<br><br>
+	</div>
+	<br>
+	<hr>
+	<br>
+	<table style="margin: auto;">
+		<tr>
+			<td><a href="/discover/" class="btn">submit a project</a></td>
+			<td><a href="/discover/" class="btn">discover</a></td>
+			<td><a class="btn">give here</a></td>
+		</tr>
+	</table>
+	<br><br><br>
+	<hr>
+		<p class="lead" style="text-align:center;">articles / information / etc</p>
+		<p class="lead" style="text-align:center;">articles / information / etc</p>
+		<p class="lead" style="text-align:center;">articles / information / etc</p>
+	<hr>
+	<br>
+	<hr>
+		<p class="lead" style="text-align:center;">we're really great</p>
+		<p class="lead" style="text-align:center;">we're really great</p>
+		<p class="lead" style="text-align:center;">we're really great</p>
+	<hr>
+
+
+	<script>
+	{{an_array=[]}}
+    {{import time}}
+    {{array = [1,2,3,4,5]}}
+    {{for counter, value in enumerate(array):}}
+        {{an_array.append([ value*1000, int(value) ])}}
+    {{pass}}
+
+    $(function() {
+        var data = '';
+        var show_graph_lines = true;
+        if (data == ''){data = {{=an_array}};}                  
+        var options = {
+            series: {
+                lines: {show: true},                            
+                points: {show: true}
+            },
+            grid: {
+                hoverable: true,
+                clickable: true
+            },
+            xaxis:{mode:"time",},
+            yaxis: {show: true,},
+            selection: {mode: "x"},
+        };
+        var placeholder = $.plot("#placeholder", [data], options);
+        $("#placeholder").bind("plotselected", function (event, ranges) {
+            placeholder = $.plot("#placeholder", [data], $.extend(true, {}, options, {
+            xaxis: {
+                min: ranges.xaxis.from,
+                max: ranges.xaxis.to
+            },
+            lines: { show: show_graph_lines },
+            points: { show: true }
+            }));
+        overview.setSelection(ranges, true);
+        }); 
+                                       
+        function showTooltip(x, y, contents) {
+            $("<div id='tooltip'>" + contents + "</div>").css({
+            position: "absolute",
+            display: "none",
+            top: y + 5,
+            left: x + 5,
+            border: "1px solid #fdd",
+            padding: "2px",
+            "background-color": "#fee",
+            opacity: 0.80
+            }).appendTo("body").fadeIn(200);
+        }           
+        var previousPoint = null;
+        $("#placeholder").bind("plothover", function (event, pos, item) {
+            var str = "(" + pos.x.toFixed(2) + ", " + pos.y.toFixed(2) + ")";
+            $("#hoverdata").text(str);
+            if (item) {
+                if (previousPoint != item.dataIndex) {         
+                    previousPoint = item.dataIndex;
+                    $("#tooltip").remove();
+                    var x = item.datapoint[0].toFixed(2),
+                    y = item.datapoint[1].toFixed(2);          
+                    showTooltip(item.pageX, item.pageY,
+                    item.series.label + " of " + x + " = " + y);
+                }
+            } else {
+                $("#tooltip").remove();
+                previousPoint = null;            
+            }           
+        });   
+        $("#placeholder").bind("plotclick", function (event, pos, item) {
+            if (item) {
+                $("#clickdata").text(" - click point " + item.dataIndex + " in " + item.series.label);
+                plot.highlight(item.series, item.datapoint);
+            }
+        });
+    });
+	</script>
+    
+<div>
+    <div id="placeholder" style="width:75%;height:250px;display: table;margin: 0 auto;"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<br><br><br>
+<div id="share-footer">
+    <div id="share-footer-container">
+    	<div style="float:left;">
+    		<h1>share</h1>
+    		<p class="lead">facebook, twitter, lealr, google</p>
+    	</div>
+		<div style="float:right;">
+		    <h1>get the app</h1>
+		    <a href=""><img class="opacity-img" style="height:48px;" src="/givingfor/static/images/app_store_icon.png" /></a>
+		    <a href=""><img class="opacity-img" style="height:48px;" src="/givingfor/static/images/android_marketplace_icon.png" /></a>
+		</div>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+<br>
+<br>
+<br>

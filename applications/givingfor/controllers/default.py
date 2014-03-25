@@ -17,6 +17,14 @@ def account():
     return dict(message=T('Hello World'))
 
 ################################
+####discover####################
+################################
+def discover():
+
+    return dict(message=T('Hello World'))  
+
+
+################################
 ####faq#########################
 ################################
 def faq():
@@ -27,9 +35,18 @@ def faq():
 ####index#######################
 ################################
 def index():
+    project_list = db(db.project).select()
+
+    return dict(project_list=project_list)
+
+
+################################
+####member######################
+################################
+def member():
 
     return dict(message=T('Hello World'))
-
+    
 ################################
 ####mission#####################
 ################################
@@ -55,22 +72,33 @@ def partner():
 ####partners####################
 ################################
 def partners():
-
     return dict(message=T('Hello World')) 
 
 ################################
 ####project#####################
 ################################
 def project():
+    try:
+        selected_project = db(db.project.url_title == request.args(0)).select()
 
-    return dict(message=T('Hello World'))
+    except IndexError:
+        redirect(URL('projects'))
+
+    return dict(selected_project=selected_project)
 
 ################################
 ####projects####################
 ################################
 def projects():
+    project_list = db(db.project).select()
 
-    return dict(message=T('Hello World'))
+    return dict(project_list=project_list)
+
+################################
+####search######################
+################################
+def search():
+    return dict(message=T('Hello World'))  
 
 ################################
 ####terms#######################
@@ -90,38 +118,16 @@ def transparency():
 ####helpers#####################################################
 ################################################################
 
+service = Service(globals())
+
 @cache.action()
 def download():
-    """
-    allows downloading of uploaded files
-    http://..../[app]/default/download/[filename]
-    """
     return response.download(request, db)
 
 
 def call():
-    """
-    exposes services. for example:
-    http://..../[app]/default/call/jsonrpc
-    decorate with @services.jsonrpc the functions to expose
-    supports xml, json, xmlrpc, jsonrpc, amfrpc, rss, csv
-    """
     return service()
-
 
 @auth.requires_signature()
 def data():
-    """
-    http://..../[app]/default/data/tables
-    http://..../[app]/default/data/create/[table]
-    http://..../[app]/default/data/read/[table]/[id]
-    http://..../[app]/default/data/update/[table]/[id]
-    http://..../[app]/default/data/delete/[table]/[id]
-    http://..../[app]/default/data/select/[table]
-    http://..../[app]/default/data/search/[table]
-    but URLs must be signed, i.e. linked with
-      A('table',_href=URL('data/tables',user_signature=True))
-    or with the signed load operator
-      LOAD('default','data.load',args='tables',ajax=True,user_signature=True)
-    """
     return dict(form=crud())

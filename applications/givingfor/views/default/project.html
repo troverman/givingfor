@@ -1,38 +1,57 @@
 {{extend 'layout.html'}}
+<style>
+ #content { }
+ #right { 
+	width: 255px;
+	float: right;
+	padding-left:15px;
+	padding-right:15px; 
+}
+#left {
+	width: 175px; 
+	float: left;
+	border-right:1px solid rgb(238,238,238);  
+	padding-left:15px;    
+}
+</style>
 <br><br>
-<h1>givingfor</h1><hr>
-<br>
-<p class="lead">help those in need</p>
+<div class="centered-width">
+	<div id="right">
+		<p class="btn">donate</p>
+		<p class="btn">follow</p>
+		<p class="btn">progress</p>
+		<p class="btn">follower list</p>
+		<p class="btn">like?</p>
+	</div>
+	<div id="left">
+		share<br>
+		facebook<br>
+		twitter<br>
+		google+<br>
+		lealr<br>
+		conex.us<br>
+		sharing causes more donations!<br>
+	</div>
+	<div id="content">
+		<h1>{{=selected_project[0]['title']}}</h1>
+		<p class="lead">{{=selected_project[0]['description']}}</p>
+		<p>by</p><a href="/member/member/">memeber name</a> for <a href="/project/parent/">parent project</a>
+		<br><br>
+		<h4>project details</h4>
+		<h4>transparent finances etc</h4>
+		<h4>associated projects</h4>
+		<h4>goals</h4>
+		<h4>where does the money go? money tracking</h4>
+		<h4>project goals / time frame</h4>
+		<p>list of people who contributed / profile links</p>
+		<br><br>
+		<p>conex.us project link</p>
+		<p>results reporting</p>
+	    <div class="progress progress-striped active">
+	    	<div class="bar" style="width: 40%;"></div>
+	    </div>
 
-crowd owned and transparent<br>
-the government isn't going to do it, so we are<br>
-if you think youre eleigble for benifits, sign up <a href="">here</a>
-giving is recieving<br>
-helping with food, shelter, insurance discounts, cooperate partners<br>
-hospitalityfor, insuringfor, deliveryfor, investingfor, bankingfor, conex.us. epoint.me<br>
-vote on what the value show be spent on<br>
-voetr committee<br>
-
-<br><br>
-giving time, currency, items, good will, encouragement, content, professional appointments, consulting
-
-<h5>$10200120210 to spend</h5> how?
-
-<br>
-add a new givingfor project
-vote on project
-
-<br><br>
-browse givingfor resources
-<br>
-volunteering nearby, from home
 
 
-<br><br>
-
-life is a necisity and a right, we have advanced to the point where we should not be dying of hunger. we have healthcare technology, we have the ability to change, it's time to start seeing ourselves as a part of one larger organism. we can do this!
-<br>
-givingfor's mission is to promote the right to life. to foster growth, and to spark change. giving is recieving. 
-
-<br><br><br>
-<a class="btn">give here</a>
+	</div>
+</div>

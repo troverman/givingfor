@@ -13,6 +13,20 @@
 </style>
 <div id="header-index-container">
 	<div id="header-index">
-		<h3>mission</h3><hr>
+		<h3>{{=request.args(0)}}</h3>
 	</div>
+</div>
+
+
+<div class="centered-width">
+
+	<h4>follow</h4>
+	{{for x in range(10):}}
+		<h5>project {{=x}}</h5>
+	{{pass}}
+	{{for x in range(10):}}
+		<h5>feed item {{=x}}</h5>
+	{{pass}}
+
+
 </div>

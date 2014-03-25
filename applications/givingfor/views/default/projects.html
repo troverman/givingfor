@@ -1,6 +1,58 @@
 {{extend 'layout.html'}}
-<br><br>
-<h3>projects</h3><hr>
-{{for x in range(25):}}
-	<h2><a href="">{{=x}}</a></h2>
-{{pass}}
+<style>
+	#header-index-container{
+		background-color:rgb(220,225,225);
+		border:2px solid rgb(180,180,180);
+	}
+	#header-index{
+		margin-left:6%;
+		margin-right:6%;
+	}
+	#project-list-container{text-align:center;width:100%;}
+	#project-list-item{border:2px solid rgb(180,180,180);display:inline-block;}
+</style>
+<div id="header-index-container">
+	<div id="header-index">
+		<h3 style="float:left;">projects</h3>
+		<a style="float:right;" data-toggle="modal" href="#new-project" class="btn">+ new project</a>
+		<div style="clear:both;"></div>
+
+	</div>
+</div>
+<div class="centered-width">
+	<p>sort by</p><p>growth</p><p>followers</p><p>donated value</p><p>trending</p>
+	<p>filter</p><p>tags</p><p>date ending</p><p>type</p>
+	{{for project in project_list:}}
+		<h4><a href="/project/{{=project['url_title']}}">{{=project['title']}}</a></h4>
+		<p class="lead">{{=project['description']}}</p>
+	{{pass}}
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="modal fade" id="new-project" style="display:none;">
+    <div class="modal-header" id="new-project-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>+ new project</h3>
+    </div>
+    <br>
+    <div class="modal-body" style="">
+        <p class="lead">description and such
+        <div id="external-login" style="display: table;margin: 0 auto;">
+        <a id="facebook-login">table link 1</a>
+        <a id="twitter-login">table link 2</a>
+        <a id="google-login">table link 3</a> 
+        </div>
+    </div>
+    <div class="modal-footer">
+        footer
+    </div>
+</div> 
+
+<script>
+    $("#new-project").draggable({handle:"#new-project-header", cursor:"move"}); 
+</script>
