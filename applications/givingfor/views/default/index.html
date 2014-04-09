@@ -59,7 +59,7 @@
 <div class="centered-width">
 
 	<div id="project-list-container">
-		{{for project in project_list:}}
+		{{for project in project_list[:10]:}}
 		<div id="project-list-item">
 			<a href="/project/{{=project['url_title']}}"><p style="text-align:center;">{{=project['title']}}</p></a>
 			<a href="/project/{{=project['url_title']}}"><img style="width:256px;" class="img-polaroid" src="/givingfor/static/images/noimage-icon.png"/></a>

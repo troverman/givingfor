@@ -13,24 +13,123 @@
 	border-right:1px solid rgb(238,238,238);  
 	padding-left:15px;    
 }
+
+.panel {
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.panel-heading {
+  padding: 10px 15px;
+  margin: -15px -15px 15px;
+  font-size: 17.5px;
+  font-weight: 500;      
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #dddddd;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+.panel-footer {
+  padding: 10px 15px;
+  margin: 15px -15px -15px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #dddddd;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.panel-primary {
+  border-color: #428bca;
+}
+
+.panel-primary .panel-heading {
+  color: #ffffff;
+  background-color: #428bca;
+  border-color: #428bca;
+}
+
+.panel-success {
+  border-color: #d6e9c6;
+}
+
+.panel-success .panel-heading {
+  color: #468847;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+.panel-warning {
+  border-color: #fbeed5;
+}
+
+.panel-warning .panel-heading {
+  color: #c09853;
+  background-color: #fcf8e3;
+  border-color: #fbeed5;
+}
+
+.panel-danger {
+  border-color: #eed3d7;
+}
+
+.panel-danger .panel-heading {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+
+.panel-info {
+  border-color: #bce8f1;
+}
+
+.panel-info .panel-heading {
+  color: #3a87ad;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+
+
 </style>
 <br><br>
 <div class="centered-width">
 	<div id="right">
-		<p class="btn">donate</p>
-		<p class="btn">follow</p>
-		<p class="btn">progress</p>
-		<p class="btn">follower list</p>
-		<p class="btn">like?</p>
+		<p class="btn">donate</p><br>
+		<p class="btn">follow</p><br>
+		<p class="btn">favorite</p>
+		<p>progress</p>
+
+<br><br><br>
+
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h4 class="panel-title"><a href="http://www.voetr.com/committees/">followers</a></h4>
+		  </div>
+		  <div class="panel-body">
+		    follower<br>
+		    follower<br>
+		    follower<br>
+		    follower<br>
+		    follower<br>
+
+		  </div>
+		</div>
 	</div>
 	<div id="left">
-		share<br>
-		facebook<br>
-		twitter<br>
-		google+<br>
-		lealr<br>
-		conex.us<br>
-		sharing causes more donations!<br>
+		<br>
+		<br>
+		<h3>share</h3>
+		<p>facebook</p><br>
+		<p>twitter</p><br>
+		<p>google+</p><br>
+		<p>lealr</p><br>
+		<p>conex.us</p><br>
+		<p>sharing causes more donations!<br>
 	</div>
 	<div id="content">
 		<h1>{{=selected_project[0]['title']}}</h1>
