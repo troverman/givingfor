@@ -25,9 +25,12 @@
 <div id="header-index-container">
 	<div id="header-index">
 		<p class="lead">givingfor is a transparent, crowd owned, nonprofit, crowdgiving platform</p>
-		<p class="lead">centered on the idea that we always are improving</p>
+		<p class="lead">sustainable giving</p>
+        <p class="lead">inspiring generosity </p>
+        <p class="lead">centered on the idea that we always are improving</p>
 		<p class="lead">sign up <a href="">here</a></p>
 	</div>
+
 </div>
 <div class="centered-width">
 	<br>
@@ -41,6 +44,10 @@
 	<p class="lead" style="text-align:center;">life is a necessity and a right, it's time to start seeing ourselves as a part of one larger organism. we can do this!</p>
 	<p class="lead" style="text-align:center;">givingfor's mission is to promote the right to life, to foster growth, and to spark change. giving is recieving.</p>
 	<p class="lead" style="text-align:center;">crowd giving platform</p>
+    <br><br>
+    <p style="text-align:center"><i style="font-size:256px;" class="fa fa-refresh fa-spin"></i></p>
+    <br><br>
+    <p style="text-align:center"><i style="font-size:256px;" class="fa fa-heart-o fa-spin"></i></p>
 
 	<br>
 	<br>
@@ -72,25 +79,21 @@
 	<br>
 	<table style="margin: auto;">
 		<tr>
-			<td><a href="/discover/" class="btn">submit a project</a></td>
-			<td><a href="/discover/" class="btn">discover</a></td>
-			<td><a class="btn">give here</a></td>
+			<td><a href="/discover/" class="btn"><i class="fa fa-heart"></i> submit a project</a></td>
+			<td><a href="/discover/" class="btn"><i class="fa fa-random"></i> discover</a></td>
+			<td><a class="btn"><i class="fa fa-heart"></i> give / volunteer</a></td>
 		</tr>
 	</table>
 	<br><br><br>
 	<hr>
-		<p class="lead" style="text-align:center;">articles / information / etc</p>
-		<p class="lead" style="text-align:center;">articles / information / etc</p>
-		<p class="lead" style="text-align:center;">articles / information / etc</p>
+    {{for article in range(5):}}
+        <div id="project-list-item">
+            <p class="lead" style="text-align:center;">articles / information / etc</p>
+            <a href=""><img style="width:256px;" class="img-polaroid" src="/givingfor/static/images/noimage-icon.png"/></a>
+        </div>
+    {{pass}}
 	<hr>
 	<br>
-	<hr>
-		<p class="lead" style="text-align:center;">we're really great</p>
-		<p class="lead" style="text-align:center;">we're really great</p>
-		<p class="lead" style="text-align:center;">we're really great</p>
-	<hr>
-
-
 	<script>
 	{{an_array=[]}}
     {{import time}}
@@ -168,19 +171,12 @@
     });
 	</script>
     
-<div>
-    <div id="placeholder" style="width:75%;height:250px;display: table;margin: 0 auto;"></div>
-</div>
-
-
-
-
-
-
-
-
-
-
+    <hr>
+    <p class="lead" style="text-align:center;">we're really great</p>
+    <div>
+        <div id="placeholder" style="width:75%;height:250px;display: table;margin: 0 auto;"></div>
+    </div>
+    <hr>    
 
 
 
