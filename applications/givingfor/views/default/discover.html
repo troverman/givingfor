@@ -1,24 +1,39 @@
 {{extend 'layout.html'}}
-<style>
-	#header-index-container{
-		background-color:rgb(220,225,225);
-		border:2px solid rgb(180,180,180);
-	}
-	#header-index{
-		margin-left:6%;
-		margin-right:6%;
-	}
-	#project-list-container{text-align:center;width:100%;}
-	#project-list-item{border:2px solid rgb(180,180,180);display:inline-block;}
+<style type="text/css">
+    #another-div{margin-left:3%;margin-right:3%;}
+    #another-div-container{border-top:3px solid rgb(210,210,210);}
+    #discover-div{margin-left:3%;margin-right:3%;}
+    #discover-div-container{border-top:3px solid rgb(210,210,210);border-bottom:3px solid rgb(210,210,210);}
+    #index-header{
+    background-color:rgb(247,247,247);
+    border-bottom:1px solid rgb(225, 225, 225);
+    padding-top:25px;
+    padding-bottom:30px;
+    }
+    #index-header-container{
+        margin-left:5%;
+        margin-right:5%;
+    }
+    #share-footer{
+    background-color:rgb(247,247,247);
+    border-top:1px solid rgb(225, 225, 225);
+    }
+    #share-footer-container{margin-left:5%;margin-right:5%;}
+    #project-list-container{text-align:center;width:100%;}
+    #project-list-item{border:2px solid rgb(180,180,180);display:inline-block;padding:10px;margin:7px;}
+    #project-list-item:hover{border:2px solid rgb(110,110,110);display:inline-block;padding:11px;margin:7px;}
+
 </style>
-<div id="header-index-container">
-	<div id="header-index">
-		<h3>discover</h3>
-	</div>
+<div id="index-header">
+    <div id="index-header-container">
+        <h1 style="text-align:left;">discover</h1>
+    </div>
 </div>
+<br>
+
 <div class="centered-width">
-	<p class="lead">nearby volunteer opportunities</a>
-	<p class="lead">look for projects via tags</a>
-	<p class="lead">showcase promoted types of projects</a>
-	<p class="lead">look for projects via types of information</a>
+	<p class="lead">nearby volunteer opportunities</p>
+	<p class="lead">look for projects via tags</p>
+	<p class="lead">showcase promoted types of projects</p>
+	<p class="lead">look for projects via types of information</p>
 </div>
